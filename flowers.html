@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>myflowershop</title>
+    <script src="https://cdn.tailwindcss.com"></script> 
+    <link href="../output.css" rel="stylesheet">
+ 
+    <style>
+  /* Remove scrollbars (for better UI on smaller screens) */ 
+ .scrollbar-hide::-webkit-scrollbar { display: none; }
+ .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+ #dropdown-menu { display: none; position:absolute; top:60px; right:0; width: 200px; border-radius: 8px;
+     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);z-index: 1000; } 
+ #dropdown-menu.open { display: block;
+     /* عند إضافة الكلاس "open"، تظهر القائمة */ }
+
+    </style>
+</head> 
+<body class="bg-gray-50 font-sans">
+<!-- Header Section -->
+<header class="bg-gradient-to-r from-pink-50 to-orange-100 text-gradient from-white-100 to-gray-100 
+ py-4 px-6 flex justify-between items-center relative">
+     <h1 class="text-xl font-bold font-serif  " style="color: #bd9c82;">Flower Shop❀</h1> 
+     <!-- Hamburger Menu Button --> 
+     <button id="menu-button" class="block md:hidden p-2 z-50">
+         <span class="block w-6 h-1 bg-white mb-1"></span>
+          <span class="block w-6 h-1 bg-white mb-1"></span> <span class="block w-6 h-1 bg-white"></span> 
+        </button> 
+        <!-- Navigation Menu for Larger Screens -->
+         <nav style="color: #7e634e;" class="hidden md:flex space-x-6 font-bold font-semibold text-xl"> 
+            <a href="#" class="hover:text-yellow-600">❀Home</a> 
+            <a href="#" class="hover:text-yellow-600">❀Gallery</a>
+ <a href="#" class="hover:text-yellow-600">❀About</a>
+  <a href="contact.html" class="hover:text-yellow-600">❀Contact</a> 
+</nav> 
+ <!-- Dropdown Menu for Mobile Screens (Hidden by default) -->
+ <div id="dropdown-menu" class="text-black absolute top-16 right-0 w-48 bg-white shadow-lg rounded-lg hidden"> 
+    <ul class="flex flex-col"> 
+        <li><a href="#" class="block px-6 py-4 border-b hover:bg-gray-100">Home</a></li> 
+        <li><a href="#" class="block px-6 py-4 border-b hover:bg-gray-100">Gallery</a></li>
+         <li><a href="#" class="block px-6 py-4 border-b hover:bg-gray-100">About</a></li>
+          <li><a href="contact.html" class="block px-6 py-4 hover:bg-gray-100">Contact</a></li> </ul>
+         </div> 
+        </header>
+
+ <!-- Hero Section   <section class="relative bg-pink-50 text-center p-8"> 
+    <img src="flower.jpg" alt="Flowers" class="w-full h-64 object-cover">
+     <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+
+         <h2 class="text-4xl font-bold text-white">Bespoke Flower Bouquets</h2>
+        
+        </div> 
+        </section> --> 
+        <section class="relative py-32 text-white">
+ <div class="absolute inset-0"> 
+<!-- صورة الخلفية الكاملة -->
+     <img src="bg3.jpg" alt="Background Image" 
+class="w-full h-full object-cover opacity-60"> 
+</div> <!-- النص فوق الصورة -->
+ <div class=" font-bold  relative z-10 max-w-4xl mx-auto px-6 text-center"> 
+<h2 class=" font-serif  text-5xl font-bold mb-4 italic">Welcome to Our Flower Shop</h2>
+ <p class=" font-inter text-2xl text-center italic leading-relaxed mb-8"> We offer the finest flowers,
+ thoughtfully arranged for every occasion. 
+Let our beautiful flowers brighten your day and help express your feelings in the most special way. </p>
+ </div> </section>
+        
+        <!-- Gallery -->
+<section class="py-10 px-6">
+  <h3 style="color:#caa990;" class="text-2xl font-bold font-serif mb-6 text-center">
+    Our Galleryﾟ*ꔫ*
+  </h3>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4">
+    <!-- الصورة الأولى -->
+    <div class="relative">
+      <img src="g1.jpg" alt="Flower 1" class="w-full h-48 object-cover rounded-lg">
+      <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 rounded-lg">
+        <a href="">  <p class="text-white text-lg font-medium">Beautiful Roses</p></a>
+      </div>
+    </div>
+    <!-- الصورة الثانية -->
+    <div class="relative">
+      <img src="g2.jpg" alt="Flower 2" class="w-full h-48 object-cover rounded-lg">
+      <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 rounded-lg">
+        <a href=""> <p class="text-white text-lg font-medium">our handpicked favorites</p></a>
+      </div>
+    </div>
+    <!-- الصورة الثالثة -->
+    <div class="relative">
+      <img src="g3.jpg" alt="Flower 3" class="w-full h-48 object-cover rounded-lg">
+      <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 rounded-lg">
+        <a href="">  <p class="text-white text-lg font-medium"> customers favorite</p></a>
+      </div>
+    </div>
+    <!-- الصورة الرابعة -->
+    <div class="relative">
+      <img src="flower.jpg" alt="Flower 4" class="w-full h-48 object-cover rounded-lg">
+      <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 rounded-lg">
+       <a href=""><p class="text-white text-lg font-medium">spring collection</p></a> </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- the flowrs-->
+ <script>
+    
+  function openModal(modalId) {
+    document.getElementById(modalId).classList.remove('hidden');
+  }
+
+  function closeModal(modalId) {
+    document.getElementById(modalId).classList.add('hidden');
+  }
+
+ </script>
+<section class="py-12 bg-gray-50 flex justify-center"> 
+<div class="overflow-hidden w-full max-w-5xl border border-gray-200 rounded-lg shadow-lg">
+     <h3 style="color: #caa990;" class="text-3xl font-bold font-serif mb-4 text-center">Our Flowers🌻</h3>
+ <div class="flex gap-5 overflow-x-scroll scrollbar-hide px-4"> 
+    <!-- المنتج الأول -->
+
+     <div class="flex-shrink-0 w-48 bg-white border border-gray-200 rounded-lg shadow-lg"> 
+    <img src="تنزيل (1).jpg" alt="Flower 1" class="h-40 w-full object-cover rounded-t-lg"> 
+<div class="p-4 text-center"> 
+    <button onclick="openModal('modal1')"
+     class="bg-orange-100 text-yellow-900 text-sm px-4 py-1 rounded-full hover:bg-orange-200 hover:text-yellow-950">More Details</button> 
+ <p style="color: #876b57;" class=" text-sm mt-2">Butterfly Rose ❀
+
+ </p>
+ </div> 
+</div>
+  <!-- المنتج الثاني --> 
+
+ <div class="flex-shrink-0 w-48 bg-white border border-gray-200 rounded-lg shadow-lg"> 
+    <img src="flower.jpg" alt="Flower 2" class="h-40 w-full object-cover rounded-t-lg"> 
+    <div class="p-4 text-center"> 
+        <button class="bg-orange-100 text-yellow-900 text-sm px-4 py-1 rounded-full hover:bg-orange-200 hover:text-yellow-950">More Details</button> 
+ <p style="color: #876b57;" class=" text-sm mt-2"> Heliportia ✿ ❀
+
+ </p>
+ </div>
+ </div>
+
+  <!-- المنتج الثالث --> 
+ 
+ <div class="flex-shrink-0 w-48 bg-white border border-gray-200 rounded-lg shadow-lg scale-102"> 
+    <img src="ff.jpg" alt="Flower 3" class="h-40 w-full object-cover rounded-t-lg"> 
+    <div class="p-4 text-center"> 
+        <button class="bg-orange-100 text-yellow-900 text-sm px-4 py-1 rounded-full hover:bg-orange-200 hover:text-yellow-950">More Details</button> 
+<p style="color: #876b57;" class=" text-sm mt-2">Wildflower collection . ✿ .
+ </div>
+ </div>
+ 
+ <!-- المزيد من المنتجات هنا -->
+
+ <div class="flex-shrink-0 w-48 bg-white border border-gray-200 rounded-lg shadow-lg"> 
+    <img src="تنزيل (2).jpg" alt="Flower 3" class="h-40 w-full object-cover rounded-t-lg"> 
+    <div class="p-4 text-center"> 
+        <button class="bg-orange-100 text-yellow-900 text-sm px-4 py-1 rounded-full hover:bg-orange-200 hover:text-yellow-950">More Details</button> 
+<p style="color: #876b57;" class=" text-sm mt-2"> Dahlia❀○❀
+
+</p>
+ </div>
+ </div>
+
+ <div class="flex-shrink-0 w-48 bg-white border border-gray-200 rounded-lg shadow-lg"> 
+    <img src="تنزيل (3).jpg" alt="Flower 3" class="h-40 w-full object-cover rounded-t-lg"> 
+    <div class="p-4 text-center"> 
+        <button class="bg-orange-100 text-yellow-900 text-sm px-4 py-1 rounded-full hover:bg-orange-200 hover:text-yellow-950">More Details</button> 
+<p style="color: #876b57;" class="text-sm mt-2">Dahliaection ○❀
+
+</p>
+ </div>
+ </div>
+ <div class="flex-shrink-0 w-48 bg-white border border-gray-200 rounded-lg shadow-lg"> 
+    <img src="Florish_.jpg" alt="Flower 3" class="h-40 w-full object-cover rounded-t-lg"> 
+    <div class="p-4 text-center"> 
+<button class="bg-orange-100 text-yellow-900 text-sm px-4 py-1 rounded-full hover:bg-orange-200 hover:text-yellow-950">More Details</button> 
+<p style="color: #876b57;" class=" text-sm mt-2">LighOrchid ✿❀
+     </p>
+ </div>
+ </div>
+
+ </div> 
+</div>
+ </section>
+
+<!-- about the store --> 
+<!-- قسم القصة عن المتجر --> 
+<section class="py-16 bg-gradient-to-r from-pink-100 to-orange-100 text-white relative border-t-4 border-gray-200">
+<div class="max-w-5xl mx-auto px-6 flex justify-between items-center"> 
+<!-- النص عن القصة -->
+     <div class="w-1/2 pr-8"> 
+        <h2 class="text-4xl font-bold mb-4 font-bold">Our Story ∘♡∘
+
+        </h2> 
+<p style="color:#ffffff;" class="text-2xl leading-relaxed font-semibold"> Welcome to our flower shop! We have been offering fresh and beautiful flowers
+     for all occasions for over 20 years. Our passion for flower
+     rangements is evident in every bouquet we create,
+and our commitment to quality ensures that every customer walks away with a smile. Whether you're celebrating a
+special event or just want to brighten someone's day, we're here to help you express your feelings with the beauty of
+flowers. </p> 
+</div>
+         <div class="w-1/2"> 
+    <img src="flower.jpg" alt="Store Image" class="w-full h-auto rounded-lg shadow-lg">
+ </div> </div>
+ </section>
+
+<!-- About Section --> 
+
+<section class="bg-gray-100 py-10 px-6"> 
+    <div class="flex flex-col md:flex-row items-center gap-6">
+ <img src="owner.jpg" alt="Owner" class="w-48 h-48 rounded-full object-cover"> 
+         <div> 
+    <h3 class="text-2xl font-bold">
+Meet the Creative Behind our store .・。.・.・。
+    </h3>
+ <p class="text-gray-600 mt-4"> 
+    marya bring a uniq toutch to
+    every bouquet she creates,
+her love for beauty and design mader her oassionate about roses and took care of them. ∘°∘♡∘°∘
+</p>
+ </div> 
+</div> 
+</section> 
+ <!-- Stats Section --> 
+  <section style="background-color:#ffe7de; color: #66503f;"  class="py-10 text-center">
+ <div class="grid grid-cols-1 sm:grid-cols-3 gap-6"> 
+    <div> 
+<h4 class="text-3xl font-bold text-gray-800">267</h4> 
+<p class="">Custom Bouquets Created</p> </div>
+ <div>
+     <h4 class="text-3xl font-bold text-gray-800">90</h4> 
+    <p class="">Workshops Organized</p> </div> 
+    <div>
+         <h4 class="text-3xl font-bold text-gray-800">48</h4>
+ <p class="">flower
+     Types Available</p> </div>
+ </div>
+ </section> 
+ <script>
+  
+// Toggle the dropdown menu 
+const menuButton = document.getElementById('menu-button');
+ const dropdownMenu = document.getElementById('dropdown-menu');
+  menuButton.addEventListener('click', () => { dropdownMenu.classList.toggle('open'); 
+// إضافة أو إزالة الكلاس "open" عند الضغط 
+});
+
+ </script>
+ <!-- Footer --> 
+  <footer class="">
+<footer style="color: #4b3e34;"; class="bg-gradient-to-r from-pink-50 to-orange-100 text-white py-8"> 
+    <!-- الأقسام النصية --> 
+<div class="flex flex-col sm:flex-row justify-center items-center text-sm md:text-base sm:space-x-4 md:space-x-8 mb-6">
+    <div class="flex flex-col sm:flex-row items-center sm:space-x-4"> 
+      <span>About Us</span> 
+<div class="hidden sm:block">|</div> 
+</div> 
+<hr class="sm:hidden border-gray-400 w-16 my-2">
+ <div class="flex flex-col sm:flex-row items-center sm:space-x-4">
+ <span>Privacy Policy</span> 
+ <div class="hidden sm:block">|</div> 
+</div> <hr class="sm:hidden border-gray-400 w-16 my-2">
+ <div class="flex flex-col sm:flex-row items-center"> 
+    <span>Terms & Conditions</span>
+   </div> </div>
+ <!-- أيقونات السوشيال ميديا --> 
+  <div class="flex justify-center space-x-6">
+ <a href="#" style="color: #947a66;" class=" hover:text-gray-400">
+ <!-- أيقونة فيسبوك -->
+   <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+ <path d="M22.675 0h-21.35c-.729 0-1.325.596-1.325 1.325v21.351c0 .729.596 1.324 1.325 1.324h11.494v-9.295h-3.125v-3.622h3.125v-2.671c0-3.1 1.893-4.785 4.658-4.785 1.325 0 2.465.098 2.795.143v3.241h-1.919c-1.507 0-1.8.716-1.8 1.764v2.308h3.6l-.468 3.622h-3.132v9.296h6.131c.729 0 1.325-.595 1.325-1.324v-21.351c0-.729-.596-1.325-1.325-1.325z" />
+ </svg> </a>
+  <a href="#" style="color:#947a66;" class=" hover:text-yellow-900">
+ <!-- أيقونة تويتر --> 
+  <svg xmlns="http://www.w3.org/2000/svg"
+   class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"> 
+   <path d="M22.23 5.924c-.816.363-1.69.607-2.608.717.938-.562 1.66-1.452 2-2.51-.878.52-1.85.898-2.884 1.1-.828-.88-2.01-1.431-3.316-1.431-2.506 0-4.537 2.032-4.537 4.537 0 .356.04.703.12 1.037-3.768-.188-7.124-1.994-9.356-4.733-.39.67-.614 1.451-.614 2.285 0 1.576.803 2.966 2.022 3.784-.747-.023-1.45-.228-2.064-.57v.06c0 2.2 1.565 4.032 3.646 4.45-.38.103-.78.157-1.192.157-.293 0-.577-.03-.855-.083.578 1.8 2.257 3.112 4.243 3.149-1.556 1.22-3.52 1.947-5.653 1.947-.367 0-.732-.021-1.091-.064 2.015 1.293 4.412 2.046 6.986 2.046 8.382 0 12.963-6.944 12.963-12.963 0-.2-.006-.401-.016-.6.891-.643 1.662-1.446 2.276-2.36z" /> </svg>
+ </a>
+  <a href="#" style="color: #947a66;" class=" hover:text-yellow-600">
+     <!-- أيقونة إنستغرام --> 
+      <svg xmlns="http://www.w3.org/2000/svg" 
+      class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"> 
+<path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.332 3.608 1.308.975.975 1.245 2.242 1.307 3.608.058 1.266.07 1.646.07 4.851s-.012 3.584-.07 4.85c-.062 1.366-.332 2.633-1.307 3.608-.975.975-2.242 1.245-3.608 1.307-1.266.058-1.646.07-4.851.07s-3.584-.012-4.85-.07c-1.366-.062-2.633-.332-3.608-1.307-.975-.975-1.245-2.242-1.307-3.608-.058-1.266-.07-1.646-.07-4.851s.012-3.584.07-4.85c.062-1.366.332-2.633 1.307-3.608.975-.975 2.242-1.245 3.608-1.307 1.266-.058 1.646-.07 4.851-.07zm0-2.163c-3.259 0-3.667.014-4.947.072-1.28.059-2.426.29-3.324 1.187-.897.897-1.128 2.043-1.187 3.324-.058 1.28-.072 1.688-.072 4.947s.014 3.667.072 4.947c.059 1.28.29 2.426 1.187 3.324.897.897 2.043 1.128 3.324 1.187 1.28.058 1.688.072 4.947.072s3.667-.014 4.947-.072c1.28-.059 2.426-.29 3.324-1.187.897-.897 1.128-2.043 1.187-3.324.058-1.28.072-1.688.072-4.947s-.014-3.667-.072-4.947c-.059-1.28-.29-2.426-1.187-3.324-.897-.897-2.043-1.128-3.324-1.187-1.28-.058-1.688-.072-4.947-.072zm0 5.838a6.162 6.162 0 1 1 0 12.324 6.162 6.162 0 0 1 0-12.324zm0 10.162a3.999 3.999 0 1 0 0-7.999 3.999 3.999 0 0 0 0 7.999zm6.406-11.845a1.44 1.44 0 1 0 0-2.881 1.44 1.44 0 0 0 0 2.881z" /> 
+</svg>
+ </a>
+ </div>
+ </footer>
+
+  </footer>
+ <footer class=" bg-gradient-to-r from-pink-50 to-orange-100 text-gradient from-white-100 to-gray-100 
+ py-8 px-6 flex justify-center items-center relative"> 
+<p style="color: #947a66;" class="font-bold text-xl font-serif center justify-center">&copy; 2025 design by marya </p>
+ </footer> </body> </html>
